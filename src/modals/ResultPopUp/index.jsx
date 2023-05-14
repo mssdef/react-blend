@@ -124,7 +124,10 @@ const ResultPopUpModal = (props) => {
                   ></Text>
                   <Button
                     className="common-pointer cursor-pointer font-medium min-w-[244px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-auto"
-                    onClick={() => navigate("/aiblendone")}
+                    onClick={(event) => {
+                      props.onRequestClose();
+                      navigate("/aiblendone");
+                    }}
                     shape="RoundedBorder29"
                     size="sm"
                     variant="FillTealA400"

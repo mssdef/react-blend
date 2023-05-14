@@ -13,7 +13,7 @@ const ProjectRoutes = () => {
           <Route path="/" element={<AIblendOne />} />
           <Route path="*" element={<AIblendOne />} />
           <Route path="/result-render" element={<AIblendOne isOpenResultPopUpModal="true" />} />
-          <Route path="/aiblendone" element={<AIblendOne />} />
+          <Route path="/aiblendone" element={<AIblendOne isOpenResultPopUpModal="false"/>} />
           <Route path="/uploading" element={<Uploading />} />
           <Route path="/uploaded" element={<Uploaded />} />
         </Routes>
