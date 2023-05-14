@@ -1,9 +1,13 @@
 import React from "react";
 import { default as ModalProvider } from "react-modal";
 
+import { useNavigate } from "react-router-dom";
+
 import { Button, Img, Text } from "components";
 
 const ResultPopUpModal = (props) => {
+  const navigate = useNavigate();
+
   return (
     <ModalProvider
       appElement={document.getElementById("root")}
@@ -16,8 +20,9 @@ const ResultPopUpModal = (props) => {
           <div className="flex flex-col gap-[22px] items-end justify-start mb-0.5 w-full">
             <Img
               src="images/img_icroundclose.svg"
-              className="h-6 w-6"
+              className="common-pointer h-6 w-6"
               alt="icroundclose"
+              onClick={props.onRequestClose}
             />
             <div className="flex flex-col gap-3.5 items-center justify-start w-full">
               <div className="h-[618px] relative w-full">
@@ -118,7 +123,11 @@ const ResultPopUpModal = (props) => {
                     variant="h1"
                   ></Text>
                   <Button
-                    className="cursor-pointer font-medium min-w-[244px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-auto"
+                    className="common-pointer cursor-pointer font-medium min-w-[244px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-auto"
+                    onClick={(event) => {
+                      props.onRequestClose();
+                      navigate("/aiblendone");
+                    }}
                     shape="RoundedBorder29"
                     size="sm"
                     variant="FillTealA400"
