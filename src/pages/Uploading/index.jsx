@@ -1,8 +1,12 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Button, Img, Line, Text } from "components";
 
 const UploadingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="bg-white_A700 flex flex-col font-generalsans items-center justify-end mx-auto w-full">
@@ -41,9 +45,7 @@ const UploadingPage = () => {
           </div>
           <div
             className="bg-cover bg-no-repeat flex flex-col h-[502px] items-start justify-start max-w-[1350px] mt-[60px] mx-auto p-9 md:px-5 w-full"
-            style={{
-              backgroundImage: "url('images/img_group5_white_a700.svg')",
-            }}
+            style={{ backgroundImage: "url('images/img_group101.svg')" }}
           >
             <div className="flex flex-col justify-start mb-12 ml-0.5 md:ml-[0] w-[90%] md:w-full">
               <div className="flex sm:flex-col flex-row sm:gap-10 items-center justify-between ml-auto w-[79%] md:w-full">
@@ -135,7 +137,8 @@ const UploadingPage = () => {
             </div>
           </div>
           <Button
-            className="cursor-pointer font-medium max-w-[1381px] mt-[23px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-full"
+            className="common-pointer cursor-pointer font-medium max-w-[1381px] mt-[23px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-full"
+            onClick={() => navigate("/uploaded")}
             shape="RoundedBorder29"
             size="sm"
             variant="FillTealA400"

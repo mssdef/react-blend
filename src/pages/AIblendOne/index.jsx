@@ -1,8 +1,12 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Button, Img, Line, List, Text } from "components";
 
 const AIblendOnePage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="bg-white_A700 flex flex-col font-generalsans items-center justify-start mx-auto w-full">
@@ -112,7 +116,8 @@ const AIblendOnePage = () => {
               </div>
             </List>
             <Button
-              className="cursor-pointer font-medium max-w-[1381px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-full"
+              className="common-pointer cursor-pointer font-medium max-w-[1381px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-full"
+              onClick={() => navigate("/uploading")}
               shape="RoundedBorder29"
               size="sm"
               variant="FillTealA400"

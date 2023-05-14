@@ -1,8 +1,20 @@
 import React from "react";
 
+import InteriorcreatingLoadingModal from "modals/InteriorcreatingLoading";
+
 import { Button, Img, Line, Text } from "components";
 
 const UploadedPage = () => {
+  const [isOpenInteriorcreatingLoadingModal, setInteriorcreatingLoadingModal] =
+    React.useState(false);
+
+  function handleOpenInteriorcreatingLoadingModal() {
+    setInteriorcreatingLoadingModal(true);
+  }
+  function handleCloseInteriorcreatingLoadingModal() {
+    setInteriorcreatingLoadingModal(false);
+  }
+
   return (
     <>
       <div className="bg-white_A700 flex flex-col font-generalsans items-center justify-end mx-auto w-full">
@@ -100,7 +112,8 @@ const UploadedPage = () => {
             </div>
           </div>
           <Button
-            className="cursor-pointer font-medium max-w-[1381px] mt-[23px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-full"
+            className="common-pointer cursor-pointer font-medium max-w-[1381px] mt-[23px] sm:text-[28.270000000000003px] md:text-[30.270000000000003px] text-[32.27px] text-black_900 text-center uppercase w-full"
+            onClick={handleOpenInteriorcreatingLoadingModal}
             shape="RoundedBorder29"
             size="sm"
             variant="FillTealA400"
@@ -378,6 +391,12 @@ const UploadedPage = () => {
           </div>
         </div>
       </div>
+      {isOpenInteriorcreatingLoadingModal ? (
+        <InteriorcreatingLoadingModal
+          isOpen={isOpenInteriorcreatingLoadingModal}
+          onRequestClose={handleCloseInteriorcreatingLoadingModal}
+        />
+      ) : null}
     </>
   );
 };
