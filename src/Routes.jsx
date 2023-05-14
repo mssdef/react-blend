@@ -10,8 +10,9 @@ const ProjectRoutes = () => {
     <React.Suspense fallback={<>Loading...</>}>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<AIblendOne />} />
+          <Route path="*" element={<AIblendOne />} />
+          <Route path="/result-render" element={<AIblendOne isOpenResultPopUpModal="true" />} />
           <Route path="/aiblendone" element={<AIblendOne />} />
           <Route path="/uploading" element={<Uploading />} />
           <Route path="/uploaded" element={<Uploaded />} />

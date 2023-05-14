@@ -20,7 +20,7 @@ const InteriorcreatingLoadingModal = (props) => {
 
         localStorage.setItem("blend_data", JSON.stringify(res?.data?.message));
 
-        navigate("/uploaded");
+        navigate("/result-render");
       })
       .catch((err) => {
         console.error(err);
